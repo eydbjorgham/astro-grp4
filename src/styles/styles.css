@@ -36,3 +36,11 @@ li {
     margin-right: 5rem;
   }
 }
+
+/* hvordan man sætter font ind: "font-family: "CustomFont", sans-serif;" */
+@font-face {
+  font-family: "CustomFont";
+  src: url("/fonts/22265485538.ttf") format("truetype"); /* Brug WOFF for bedre kompatibilitet */
+  font-weight: normal;
+  font-style: normal;
+}
