@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f5f0;
+}
+
+h1,
+h2 {
+  font-family: "Libre Baskerville", serif;
+  color: #285d5f;
+}
+
+p {
+  font-family: "Merriweather", serif;
+  color: #0e2225;
+}
