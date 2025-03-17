@@ -18,7 +18,8 @@ h4 {
 
 p,
 ol,
-li {
+li,
+button {
   font-family: "Merriweather", serif;
   color: #0e2225;
 }
