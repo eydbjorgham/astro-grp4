@@ -18,3 +18,17 @@ p {
   font-family: "Merriweather", serif;
   color: #0e2225;
 }
+
+/* Style for the paragraph inside Section */
+.tekst p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 650px) {
+  .tekst p {
+    font-size: 20px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
