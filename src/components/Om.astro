@@ -25,9 +25,36 @@ import "../styles/styles.css"
 
 <style>
     .article {
+        padding: 2rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    .article h2 {
+        text-align: center;
+        padding-bottom: 0.8rem;
+    }
+
+    .article  p, ol, li, h4 {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .article p {
+        line-height: 1.5;
+    }
+
+    @media screen and (min-width: 650px) {
+
+        .article {
         padding: 4rem;
         margin-left: 5rem;
         margin-right: 5rem;
+    }
+        .om_1_1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        line-height: 1.5;
     }
 
     .article h2 {
@@ -40,11 +67,6 @@ import "../styles/styles.css"
         font-size: 20px;
     }
 
-    .om_1_1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        line-height: 1.5;
     }
 
 </style>
