@@ -9,12 +9,16 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
   font-family: "Libre Baskerville", serif;
   color: #285d5f;
 }
 
-p {
+p,
+ol,
+li {
   font-family: "Merriweather", serif;
   color: #0e2225;
 }
