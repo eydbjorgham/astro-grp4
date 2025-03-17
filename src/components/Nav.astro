@@ -1,0 +1,197 @@
+---
+---
+<nav>
+    <div class="sammen">
+        <div class="logoet">
+            <a href="index.html"><img class="logo" src="imgs/logopn.svg" alt="logo"></a>
+        </div>
+
+        <div class="menuen">
+            <ul class="menu">
+                <li class="nr1" ><a href="#">Tilmeld dig</a></li>
+                <li class="n2"><a href="#">Kontakt</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</nav>
+
+<style>
+    img {
+        width: 100%;
+    }
+
+    nav {
+        background-color: #F8F5F0;
+    }
+
+    .sammen {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative; 
+    }
+
+    hr {
+        margin-top: 30px;
+    }
+    .logoet {
+        display: flex;
+        height: 80px; 
+        margin: auto;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    .menu {
+        list-style: none;
+        display: flex;
+        gap: 40px;
+
+    }
+
+    .menu li {
+        display: inline;
+    }
+
+    .menu a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #723C2E;
+        text-transform: uppercase;
+        font-family: lora;
+    }
+
+    .burger {
+        display: none;
+        cursor: pointer;
+    }
+
+    .burger .line {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 6px 0;
+        transition: 0.3s;
+    }
+
+    .burger {
+  width: 30px; /** længdre på mburger ***/
+  cursor: pointer; /** Gør menuen klikbar **/
+}
+
+.burger .line {
+  height: 2px; /** Størrelse på burger streger **/
+  background-color: #333333; /** Farve **/
+  margin-bottom: 5px; /** Afstand mellem linjer **/
+}
+
+/** HEADER MOBILFORMAT **/
+@media (max-width: 600px) {
+  header {
+    display: flex;
+    padding-bottom: 3%; /** Afstand bund **/
+
+    margin-inline: auto; /** Auto i midten **/
+  }
+
+  /** MENU **/
+  .menu {
+    display: none; /** Menu vises **/
+    flex-direction: column;
+    margin-top: 25px; /** Samme afstand til top **/
+    padding-left: 2%; /** Mellemrum venstre **/
+    padding-right: 2%; /** Mellemrum højre **/
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+
+  .logo {
+    display: inline; /** Logo_2 synlig i mobil **/
+    width: 80px; /** px gør at billede ikke justeres **/
+    padding-left: 4%; /** Mellemrum venstre **/
+    padding-top: 2%; /** Mellemrum til top **/
+  }
+
+  /** BURGER **/
+  /** ELEMENTER GENBRUGT FRA VIRKSOMHEDSSITE **/
+  .burger {
+    display: block; /** Gør burger-menu synlig **/
+    margin-top: 60%; /** Mellemrum til top **/
+    padding-bottom: 70%; /** Afstand bund **/
+    margin-right: 20px;
+  }
+
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /** Laver kryds centralt **/
+    transition: 0.2s linear; /** Når kryds = glidende **/
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0; /** Fjerner streg to i burger så det giver kryds **/
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -7px); /** Laver kryds centralt **/
+    transition: 0.2s linear; /** Når kryds = glidende **/
+  }
+
+  nav.active .menu {
+        display: flex;
+    position: absolute; /** Menu kommer ned **/
+background-color: white;
+    top: 94px; /** Menu kommer rigtig ned **/
+    left: 0; /** Fylder det hele **/
+    width: 100%; /** Menu fylder hele skærm **/
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /** Skygge **/
+    z-index: 10; /** Rykker menu frem foran alt**/
+    margin-top: 30px;
+  }
+
+
+
+}
+
+</style>
+
+<script is:inline>
+
+// BURGER MENU
+// Henter bruger
+const burger = document.querySelector(".burger");
+const nav = document.querySelector("nav");
+const menu = document.querySelector(".menu");
+
+// Klik
+burger.addEventListener("click", burgerClick);
+function burgerClick() {
+  // Tilføj/fjern avtive burger = streger
+  burger.classList.toggle("active");
+
+  // Tilføj/fjern active nav = menu
+  nav.classList.toggle("active");
+}
+
+// klik på menuen
+menu.addEventListener("click", menuClick);
+function menuClick() {
+  // Lukker burger-ikon
+  burger.classList.remove("active");
+
+  // Skjuler menu
+  nav.classList.remove("active");
+}
+
+</script>
