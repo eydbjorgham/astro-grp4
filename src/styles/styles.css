@@ -23,6 +23,11 @@ li {
   color: #0e2225;
 }
 
+button {
+  font-family: "TradeGothic", sans-serif;
+  font-weight: 500;
+}
+
 /* Style for the paragraph inside Section */
 .tekst p {
   font-size: 16px;
