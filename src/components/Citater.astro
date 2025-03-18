@@ -5,37 +5,136 @@ import "../styles/styles.css"
 
 <article>
     <h2>Når erfaring kan hjælpe andre</h2>
-<div class="citatbild">
-    <img src="imgs/hands.svg" alt="Hug">
-    <div class="citater">
-        <p>"Vær dig selv, vær nysgerrig, og hav mod til at være autentisk. Turde være menneske, turde være medfølende. Vær ydmyg – ingen ved alt. Vi kan lære af hinanden, for du er ikke eksperten. Som mennesker er vi ligeværdige, men i viden og faglighed har vi forskellige kompetencer."</p>
-        <p> - Pernille 57 år, sygeplejerske i psykiatrien </p>
+    <div class="citat-container">
+        <button class="arrow-left" onclick="prevQuote()">&#10094;</button>
+   <div class="citatbild">
+       <img src="imgs/hands.svg" alt="Hug">
+       <div class="citater">
+           <p>"Vær dig selv, vær nysgerrig, og hav mod til at være autentisk. Turde være menneske, turde være medfølende. Vær ydmyg – ingen ved alt. Vi kan lære af hinanden, for du er ikke eksperten. Som mennesker er vi ligeværdige, men i viden og faglighed har vi forskellige kompetencer."</p>
+           <p> - Pernille 57 år, sygeplejerske i psykiatrien </p>
+           <p>"Jeg gider ikke tage diskussionen op med andre om min pårørende og deres misbrug. - Jeg ved det godt"</p>
+           <p> - Marie, 23 år, pårørende </p>
+           <p>"Jeg kender ikke så meget til det, men det lyder som noget vigtigt. Jeg har ikke selv erfaring med misbrug eller det at være pårørende, så jeg har aldrig tænkt på, at der fandtes sådan et netværk."</p>
+           <p> - Birni, 25 år, studerende </p>
+           <p>"Da jeg selv var i misbrug, så jeg, hvordan det påvirkede min familie, og jeg ville ønske, de havde haft bedre støtte. Nu hvor jeg har fået mit liv tilbage, vil jeg gerne bruge mine erfaringer til at hjælpe andre – både dem, der kæmper med afhængighed, og deres familier."</p>
+           <p> - tidl. misbruger, 40 år </p>
     </div>
-</div>
+   </div>
+   <button class="arrow-right" onclick="nextQuote()">&#10095;</button>
+    </div>
     
 </article>
 
 <style>
     article {
-        background-color: #E8EAE3;
-    }
+    background-color: #E8EAE3;
+}
 
-    article h2 {
-        text-transform: uppercase;
-    }
+article h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    padding: 3rem;
+}
 
-    .citatbild {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+/* Container, der holder pile + citat */
+.citat-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem;
+}
 
-    .citater {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Pile styling */
+.arrow {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #D95D39;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
 
-    .citater p {
-        font-style: italic;
-    }
+.arrow:hover {
+    transform: scale(1.2);
+}
+
+/* Boks med billede og tekst */
+.citatbild {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+}
+
+.citatbild img {
+    width: 50%;
+    max-width: 300px;
+}
+
+.citater {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.citater p {
+    font-style: italic;
+    text-align: center;
+    line-height: 1.5;
+
+}
 </style>
+
+<script>
+    const quotes = [
+        {
+            text: "Vær dig selv, vær nysgerrig, og hav mod til at være autentisk. Turde være menneske, turde være medfølende. Vær ydmyg – ingen ved alt. Vi kan lære af hinanden, for du er ikke eksperten. Som mennesker er vi ligeværdige, men i viden og faglighed har vi forskellige kompetencer.",
+            author: "- Pernille, 57 år, sygeplejerske i psykiatrien"
+        },
+        {
+            text: "Jeg gider ikke tage diskussionen op med andre om min pårørende og deres misbrug. - Jeg ved det godt",
+            author: "- Marie, 23 år, pårørende"
+        },
+        {
+            text: "Jeg kender ikke så meget til det, men det lyder som noget vigtigt. Jeg har ikke selv erfaring med misbrug eller det at være pårørende, så jeg har aldrig tænkt på, at der fandtes sådan et netværk.",
+            author: "- Birni, 25 år, studerende"
+        },
+        {
+            text: "Da jeg selv var i misbrug, så jeg, hvordan det påvirkede min familie, og jeg ville ønske, de havde haft bedre støtte. Nu hvor jeg har fået mit liv tilbage, vil jeg gerne bruge mine erfaringer til at hjælpe andre – både dem, der kæmper med afhængighed, og deres familier.",
+            author: "- tidl. misbruger, 40 år"
+        }
+    ];
+
+    let currentIndex = 0;
+
+    function updateQuote() {
+        const quoteEl = document.querySelector("#quote");
+        const authorEl = document.querySelector("#author");
+
+        if (quoteEl && authorEl) { // Sikrer at elementerne findes
+            quoteEl.textContent = quotes[currentIndex].text;
+            authorEl.textContent = quotes[currentIndex].author;
+        }
+    }
+
+    function nextQuote() {
+        currentIndex = (currentIndex + 1) % quotes.length;
+        updateQuote();
+    }
+
+    function prevQuote() {
+        currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+        updateQuote();
+    }
+
+    // Sørger for at første citat vises ved load
+    updateQuote();
+
+    // Gør knapperne funktionelle
+    document.querySelector(".arrow-left").addEventListener("click", prevQuote);
+    document.querySelector(".arrow-right").addEventListener("click", nextQuote);
+
+</script>
