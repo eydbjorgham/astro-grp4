@@ -37,10 +37,10 @@ li {
   }
 }
 
-/* hvordan man sætter font ind: "font-family: "CustomFont", sans-serif;" */
+/* hvordan man sætter font ind: font-family: 'TradeGothic', sans-serif;*/
 @font-face {
-  font-family: "CustomFont";
-  src: url("/fonts/22265485538.ttf") format("truetype"); /* Brug WOFF for bedre kompatibilitet */
-  font-weight: normal;
+  font-family: "TradeGothic";
+  src: url("/fonts/TradeGothicNo.20-Condensed Bold.ttf") format("truetype");
+  font-weight: bold;
   font-style: normal;
 }
