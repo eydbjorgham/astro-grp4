@@ -18,13 +18,13 @@ import Button from "../components/Button.astro"
 
     <div> 
 <form>
-    <label for="dropdown"></label><br>
+    <label for="dropdown"></label>
     <select id="dropdown" name="dropdown">
         <option value="option1">Jeg søger tilbuddet</option>
         <option value="option2">Samtale forløb</option>
         <option value="option3">Akutrådgivning</option>
         <option value="option4">Gruppeforløb</option>
-    </select><br><br>
+    </select>
 </form>
 <Form2 title="Fornavn*"/>
 <Form2 title="Efternavn*"/>
@@ -34,7 +34,7 @@ import Button from "../components/Button.astro"
 <Form2 title="Email*"/>
 <Form2 title="Mobil*"/>
 <form>
-    <label for="dropdown"></label><br>
+    <label for="dropdown"></label>
     <select id="dropdown" name="dropdown">
         <option value="option1">Nuværende beskæftigelse*</option>
         <option value="option2">Psykolog</option>
@@ -47,10 +47,10 @@ import Button from "../components/Button.astro"
         <option value="option4">Pensionist/Efterlønner</option>
         <option value="option4">Studerende</option>
         <option value="option4">Andet</option>
-    </select><br><br>
+    </select>
 </form>
 <form>
-    <label for="dropdown"></label><br>
+    <label for="dropdown"></label>
     <select id="dropdown" name="dropdown">
         <option value="option1">Uddannelsesmæssig baggrund*</option>
         <option value="option2">Psykolog</option>
@@ -59,12 +59,12 @@ import Button from "../components/Button.astro"
         <option value="option4">Socialrådgiver</option>
         <option value="option4">Præst</option>
         <option value="option4">Andet</option>
-    </select><br><br>
+    </select>
 </form>
 <form>
-    <label for="dropdown"></label><br>
+    <label for="dropdown"></label>
     <select id="dropdown" name="dropdown">
-        <option value="option1">Hvorfra har du hørt om at blive frivillig på Misbrugsportalen?*</option>
+        <option value="option1">Hvorfra har du hørt om Misbrugsportalen?*</option>
         <option value="option2">Kender nuværende eller tidligere frivillige på Misbrugsportalen</option>
         <option value="option3">Facebook/Instagram</option>
         <option value="option4">LinkedIn</option>
@@ -74,7 +74,7 @@ import Button from "../components/Button.astro"
         <option value="option4">Nyhedsmedier</option>
         <option value="option4">Influencer</option>
         <option value="option4">Andet</option>
-    </select><br><br>
+    </select>
 </form>
 
  </div> 
@@ -88,7 +88,6 @@ import Button from "../components/Button.astro"
 <style>
   section{
     margin: 2rem;
-    
   }
 
   h2{
@@ -101,8 +100,20 @@ import Button from "../components/Button.astro"
     margin-bottom: 1rem;
   }
 
+/* styling af alle dropwons */
+select {
+    width: 100%; 
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #349894;  
+    background-color: rgba(183, 201, 187, 0.5);
+    color: #D95C39;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+    
+}
 
-  
 
 @media screen and (min-width: 650px) {
     .grid_1-1{
