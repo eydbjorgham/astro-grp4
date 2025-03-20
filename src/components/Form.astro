@@ -76,14 +76,15 @@ import Button from "../components/Button.astro"
         <option value="option4">Influencer</option>
         <option value="option4">Andet</option>
     </select>
+    <Button text="Send"></Button>
   </div>
+</div> 
 
- </div> 
+
+
 
 
 </div>   
-<Button text="Send"></Button>
-
 </section>
 </form>
 
@@ -117,6 +118,10 @@ select {
     
 }
 
+#dropdown {
+  margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 650px) { 
 section{
     margin-left: 5rem;
@@ -135,9 +140,9 @@ section{
 
   select {
     font-size: 15px;
-    width: 75%;
-           
+    width: 75%;      
 } 
+
 }
 
 </style>
