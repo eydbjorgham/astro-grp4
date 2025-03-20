@@ -1,168 +1,177 @@
 ---
-import "../styles/styles.css"
+
 ---
 
-</head>
-
-<body>
-    <div class="slideshow-container">
-        <div class="slides">
-            <div>
-                <img src="imgs/slide1.webp" alt="Slide 1">
-            </div>
-            <div>
-                <img src="imgs/slide2.webp" alt="Slide 2">
-            </div>
-        </div>
-        <div class="slides">
-            <div>
-                <img src="imgs/slide3.webp" alt="Slide 3">
-            </div>
-            <div>
-                <img src="imgs/slide4.webp" alt="Slide 4">
-            </div>
-        </div>
-        <div class="slides">
-            <div>
-                <img src="imgs/slide5.webp" alt="Slide 5">
-            </div>
-            <div>
-                <img src="imgs/slide6.webp" alt="Slide 6">
-            </div>
-        </div>
-        <div class="slides">
-            <div>
-                <img src="imgs/slide7.webp" alt="Slide 7">
-            </div>
-            <div>
-                <img src="imgs/slide8.webp" alt="Slide 8">
-            </div>
-        </div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+<article>
+  <div class="slideshow-container">
+    <div class="slides">
+      <div>
+        <img src="imgs/slide1.webp" alt="Slide 1" />
+      </div>
+      <div>
+        <img src="imgs/slide2.webp" alt="Slide 2" />
+      </div>
     </div>
-    <div class="dots">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
+    <div class="slides">
+      <div>
+        <img src="imgs/slide3.webp" alt="Slide 3" />
+      </div>
+      <div>
+        <img src="imgs/slide4.webp" alt="Slide 4" />
+      </div>
     </div>
-
+    <div class="slides">
+      <div>
+        <img src="imgs/slide5.webp" alt="Slide 5" />
+      </div>
+      <div>
+        <img src="imgs/slide6.webp" alt="Slide 6" />
+      </div>
+    </div>
+    <div class="slides">
+      <div>
+        <img src="imgs/slide7.webp" alt="Slide 7" />
+      </div>
+      <div>
+        <img src="imgs/slide8.webp" alt="Slide 8" />
+      </div>
+    </div>
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+</article>
 
 <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  article {
+    background-color: #e8eae3;
+    padding: 2rem;
+  }
 
-        .slideshow-container {
-            position: relative;
-            max-width: 800px;
-            height: 400px;
-            /* Sæt en fast højde for at undgå hop */
-            margin: auto;
-            overflow: hidden;
-            background-color: #E8EAE3;
-        }
+  .slideshow-container {
+    position: relative;
+    max-width: 800px;
+    height: 400px;
+    /* Sæt en fast højde for at undgå hop */
+    margin: auto;
+  }
 
-        .slides {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease-in-out, visibility 0.5s;
-        }
+  .slides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.5s ease-in-out,
+      visibility 0.5s;
+  }
 
-        .slides.active {
-            opacity: 1;
-            visibility: visible;
-        }
+  .slides.active {
+    opacity: 1;
+    visibility: visible;
+  }
 
-        img {
-            width: 100%;
-            height: auto;
-        }
+  img {
+    width: 100%;
+    height: auto;
+  }
 
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d95d39;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #d95c3900;
+    font-size: 2rem;
+  }
 
-        .prev,
-        .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #D95D39;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-        }
+  .prev {
+    left: -6%;
+  }
 
-        .prev {
-            left: 10px;
-        }
+  .next {
+    right: -6%;
+  }
 
-        .next {
-            right: 10px;
-        }
+  .dots {
+    text-align: center;
+    margin-top: 10px;
+  }
 
-        .dots {
-            text-align: center;
-            margin-top: 10px;
-        }
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 5px;
+    background-color: #d95d39;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
-        .dot {
-            height: 10px;
-            width: 10px;
-            margin: 5px;
-            background-color: #D95D39;
-            display: inline-block;
-            border-radius: 50%;
-            cursor: pointer;
-        }
+  @media (max-width: 600px) {
+    .slides {
+      grid-template-columns: 1fr;
+      /* Skift til én kolonne på mobil */
+    }
 
-        @media (max-width: 600px) {
-            .slides {
-                grid-template-columns: 1fr;
-                /* Skift til én kolonne på mobil */
-            }
-        }
-    </style>
+    .slideshow-container {
+      overflow: hidden;
+    }
 
+    .prev {
+      left: 10px;
+    }
 
-    <script is:inline>
-        let slideIndex = 1;
-        showSlides(slideIndex);
+    .next {
+      right: 10px;
+    }
+  }
+</style>
 
-        function changeSlide(n) {
-            showSlides(slideIndex += n);
-        }
+<script is:inline>
+  let slideIndex = 1;
+  showSlides(slideIndex);
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
+  function changeSlide(n) {
+    showSlides((slideIndex += n));
+  }
 
-        function showSlides(n) {
-            let slides = document.getElementsByClassName("slides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
+  function currentSlide(n) {
+    showSlides((slideIndex = n));
+  }
 
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active"); // Fjern aktiv klasse
-            }
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active");
-            }
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("slides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
 
-            slides[slideIndex - 1].classList.add("active"); // Gør aktiv slide synlig
-            dots[slideIndex - 1].classList.add("active");
-        }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active"); // Fjern aktiv klasse
+    }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
 
-    </script>
-</body>
-
-</html>
+    slides[slideIndex - 1].classList.add("active"); // Gør aktiv slide synlig
+    dots[slideIndex - 1].classList.add("active");
+  }
+</script>
