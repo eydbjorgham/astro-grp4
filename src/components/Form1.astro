@@ -1,0 +1,55 @@
+---
+---
+
+<form>
+        <label for="uploadCv">Upload CV her (.pdf, .doc, .docx)*</label><br>
+        <input type="text" id="cv" name="cv" placeholder="Vælg fil..." required><br><br>
+        
+        <label for="uploadAnsøgning">Upload ansøgning her (.pdf, .doc, .docx)*</label><br>
+        <input type="text" id="ansøgning" name="ansøgning" placeholder="Vælg fil..." required><br><br>
+    </form>
+
+<style>
+form{
+    margin-top: 2rem;
+}
+
+label{
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: #D95C39;
+}
+/* styling af input */
+input {
+    width: 100%;
+    background-color: rgba(183, 201, 187, 0.5);
+    border: 2px solid #349894;  
+    padding: 10px;               
+    border-radius: 5px;   
+    margin-top: 1rem;         
+}
+
+
+/* styling af specifikt teksten inde i forms */
+input::placeholder {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    color: #D95C39;
+    text-align: center;
+}
+
+@media screen and (min-width: 650px) {
+/* form{
+    margin-top: 18rem;
+} */
+    label{
+         margin-left: 5rem;
+    }
+   input {
+    font-size: 15px;
+    margin-left: 5rem;
+    width: 75%;
+           
+} 
+ }
+</style>

@@ -1,0 +1,140 @@
+---
+const { title3 } = Astro.props;
+
+import Form1 from "../components/Form1.astro";
+import Form2 from "../components/Form2.astro";
+import Button from "../components/Button.astro"
+
+---
+
+<section class="form_container">
+    <h2>{title3}</h2>
+  <div class="grid_1-1">
+
+    <div> 
+      <slot />
+      <Form1 />
+    </div>  
+
+    <div> 
+<form>
+    <label for="dropdown"></label>
+    <select id="dropdown" name="dropdown">
+        <option value="option1">Jeg søger tilbuddet</option>
+        <option value="option2">Samtale forløb</option>
+        <option value="option3">Akutrådgivning</option>
+        <option value="option4">Gruppeforløb</option>
+    </select>
+</form>
+<Form2 title="Fornavn*"/>
+<Form2 title="Efternavn*"/>
+<Form2 title="Fødselsår*"/>
+<Form2 title="Adresse*"/>
+<Form2 title="By*"/>
+<Form2 title="Email*"/>
+<Form2 title="Mobil*"/>
+<form>
+    <label for="dropdown"></label>
+    <select id="dropdown" name="dropdown">
+        <option value="option1">Nuværende beskæftigelse*</option>
+        <option value="option2">Psykolog</option>
+        <option value="option3">Læge</option>
+        <option value="option4">Lærer</option>
+        <option value="option4">Sygplejerske</option>
+        <option value="option4">Socialrådgiver</option>
+        <option value="option4">Præst</option>
+        <option value="option4">Ledig</option>
+        <option value="option4">Pensionist/Efterlønner</option>
+        <option value="option4">Studerende</option>
+        <option value="option4">Andet</option>
+    </select>
+</form>
+<form>
+    <label for="dropdown"></label>
+    <select id="dropdown" name="dropdown">
+        <option value="option1">Uddannelsesmæssig baggrund*</option>
+        <option value="option2">Psykolog</option>
+        <option value="option3">Læge</option>
+        <option value="option4">Sygplejerske</option>
+        <option value="option4">Socialrådgiver</option>
+        <option value="option4">Præst</option>
+        <option value="option4">Andet</option>
+    </select>
+</form>
+<form>
+    <label for="dropdown"></label>
+    <select id="dropdown" name="dropdown">
+        <option value="option1">Hvorfra har du hørt om Misbrugsportalen?*</option>
+        <option value="option2">Kender nuværende eller tidligere frivillige på Misbrugsportalen</option>
+        <option value="option3">Facebook/Instagram</option>
+        <option value="option4">LinkedIn</option>
+        <option value="option4">Webinar</option>
+        <option value="option4">Oplæg på studie eller arbejde</option>
+        <option value="option4">Annonce/Opslag på studie eller arbejde</option>
+        <option value="option4">Nyhedsmedier</option>
+        <option value="option4">Influencer</option>
+        <option value="option4">Andet</option>
+    </select>
+</form>
+
+ </div> 
+
+
+</div>   
+<Button text="Send"></Button>
+</section>
+
+  
+<style>
+  section{
+    margin: 2rem;
+  }
+
+  h2{
+    color: #285D5F;
+    font-size: 20px; /* skal måske ændres til 28px? */
+    font-family: "Libre Baskerville", serif;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+/* styling af alle dropwons */
+select {
+    width: 100%; 
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #349894;  
+    background-color: rgba(183, 201, 187, 0.5);
+    color: #D95C39;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+    
+}
+
+@media screen and (min-width: 650px) { 
+section{
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+    .grid_1-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h2{
+    font-size: 48px; /* skal måske ændres til 28px? */
+    margin-bottom: 3rem;
+  }
+
+  select {
+    font-size: 15px;
+    width: 75%;
+           
+} 
+}
+
+</style>
