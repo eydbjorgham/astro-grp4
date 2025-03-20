@@ -2,7 +2,54 @@
 import "../styles/styles.css"
 ---
 
- <style>
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <div class="slides">
+            <div>
+                <img src="imgs/slide1.webp" alt="Slide 1">
+            </div>
+            <div>
+                <img src="imgs/slide2.webp" alt="Slide 2">
+            </div>
+        </div>
+        <div class="slides">
+            <div>
+                <img src="imgs/slide3.webp" alt="Slide 3">
+            </div>
+            <div>
+                <img src="imgs/slide4.webp" alt="Slide 4">
+            </div>
+        </div>
+        <div class="slides">
+            <div>
+                <img src="imgs/slide5.webp" alt="Slide 5">
+            </div>
+            <div>
+                <img src="imgs/slide6.webp" alt="Slide 6">
+            </div>
+        </div>
+        <div class="slides">
+            <div>
+                <img src="imgs/slide7.webp" alt="Slide 7">
+            </div>
+            <div>
+                <img src="imgs/slide8.webp" alt="Slide 8">
+            </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+
+<style>
         * {
             box-sizing: border-box;
             margin: 0;
@@ -84,51 +131,7 @@ import "../styles/styles.css"
             }
         }
     </style>
-</head>
 
-<body>
-    <div class="slideshow-container">
-        <div class="slides">
-            <div>
-                <img src="slide1.webp" alt="Slide 1">
-            </div>
-            <div>
-                <img src="slide2.webp" alt="Slide 2">
-            </div>
-        </div>
-        <div class="slides">
-            <div>
-                <img src="slide3.webp" alt="Slide 3">
-            </div>
-            <div>
-                <img src="slide4.webp" alt="Slide 4">
-            </div>
-        </div>
-        <div class="slides">
-            <div>
-                <img src="slide5.webp" alt="Slide 5">
-            </div>
-            <div>
-                <img src="slide6.webp" alt="Slide 6">
-            </div>
-        </div>
-        <div class="slides">
-            <div>
-                <img src="slide7.webp" alt="Slide 7">
-            </div>
-            <div>
-                <img src="slide8.webp" alt="Slide 8">
-            </div>
-        </div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-    </div>
-    <div class="dots">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-    </div>
 
     <script is:inline>
         let slideIndex = 1;
