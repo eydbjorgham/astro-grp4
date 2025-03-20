@@ -1,73 +1,75 @@
 ---
-import "../styles/styles.css"
-import Button from "../components/Button.astro"
+import Button from "./Button.astro";
 ---
 
 <article class="article">
-    <h2>OM AT VÆRE FRIVILLIG</h2>
+  <h2>OM AT VÆRE FRIVILLIG</h2>
 
-    <div class="om_1_1">
-        <div>
-            <h4>Hvad kan du lave som frivillig?</h4>
-            <ol>
-                <li>Vær mentor og støttende hånd for familier, der kæmper</li>
-                <li>Hjælp med at samle mennesker i støttegrupper</li>
-                <li>Lyt og vær der for dem, der har brug for at dele</li>
-                <li>Sæt fokus på emnet ved at arrangere events</li>
-            </ol>
-        </div>
-        <div>
-            <h4>Hvem kan være med?</h4>
-            <p>Uanset om du selv har oplevet afhængighed tæt på eller bare brænder for at hjælpe, så er der plads til dig. Det handler ikke om at være ekspert – det handler om at være et medmenneske. Hvis du kan lytte, lære og møde andre med omsorg, så er du allerede godt på vej.</p>
-        </div>
-        <Button text="Læs mere her"></Button>
+  <div class="om_1_1">
+    <div>
+      <h4>Hvad kan du lave som frivillig?</h4>
+      <ol>
+        <li>Vær mentor og støttende hånd for familier, der kæmper</li>
+        <li>Hjælp med at samle mennesker i støttegrupper</li>
+        <li>Lyt og vær der for dem, der har brug for at dele</li>
+        <li>Sæt fokus på emnet ved at arrangere events</li>
+      </ol>
     </div>
+    <div>
+      <h4>Hvem kan være med?</h4>
+      <p>Uanset om du selv har oplevet afhængighed tæt på eller bare brænder for at hjælpe, så er der plads til dig. Det handler ikke om at være ekspert – det handler om at være et medmenneske. Hvis du kan lytte, lære og møde andre med omsorg, så er du allerede godt på vej.</p>
+    </div>
+    <Button text="Læs mere her" />
+  </div>
 </article>
 
 <style>
+  .article {
+    padding: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .article h2 {
+    text-align: center;
+    padding-bottom: 0.8rem;
+  }
+
+  .article p,
+  ol,
+  li,
+  h4 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .article p {
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 650px) {
     .article {
-        padding: 2rem;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
+      padding: 4rem;
+      margin-left: 5rem;
+      margin-right: 5rem;
     }
-    .article h2 {
-        text-align: center;
-        padding-bottom: 0.8rem;
-    }
-
-    .article  p, ol, li, h4 {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-
-    .article p {
-        line-height: 1.5;
-    }
-
-    @media screen and (min-width: 650px) {
-
-        .article {
-        padding: 4rem;
-        margin-left: 5rem;
-        margin-right: 5rem;
-    }
-        .om_1_1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        line-height: 1.5;
+    .om_1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      line-height: 1.5;
     }
 
     .article h2 {
-        text-align: center;
-        padding-bottom: 2rem;
-        font-size: 2.5rem;
+      text-align: center;
+      padding-bottom: 2rem;
+      font-size: 2.5rem;
     }
 
-    .article p, ol, li, h4 {
-        font-size: 20px;
+    .article p,
+    ol,
+    li,
+    h4 {
+      font-size: 20px;
     }
-
-    }
-
+  }
 </style>

@@ -1,12 +1,11 @@
 ---
-import "../styles/styles.css"
 const { text, variant } = Astro.props;
 ---
 
 <button class={variant}>{text}</button>
 
 <style>
-    button {
+  button {
     border: none;
     outline: 0;
     display: inline-block;
@@ -14,14 +13,21 @@ const { text, variant } = Astro.props;
     text-align: center;
     cursor: pointer;
     width: 30%;
-    background-color: #D95D39;
-    color: #F8F5F0;
+    background-color: #d95d39;
+    color: #f8f5f0;
     font-size: 24px;
     border-radius: 5px;
     transition: background-color 0.1s ease-in;
-    }
+  }
 
-    button:hover {
-        background-color: #E5A823;
+  button:hover {
+    background-color: #e5a823;
+  }
+
+  @media (max-width: 600px) {
+    button {
+        font-size: 15px;
+        margin-bottom: 2rem;
     }
+  }
 </style>

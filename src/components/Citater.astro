@@ -1,5 +1,5 @@
 ---
-import "../styles/styles.css";
+
 ---
 
 <article>
@@ -27,7 +27,7 @@ import "../styles/styles.css";
 <style>
   article {
     background-color: #e8eae3;
-    position: absolute;
+    position: relative;
     width: 100%;
   }
 
@@ -35,7 +35,7 @@ import "../styles/styles.css";
     text-align: center;
     text-transform: uppercase;
     font-size: 2.5rem;
-    padding: 3rem;
+    padding-top: 4rem;
   }
 
   /* Container, der holder pile + citat */
@@ -44,7 +44,8 @@ import "../styles/styles.css";
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 5rem;
+    padding: 3rem;
+    
   }
 
   .arrowprev,
@@ -56,14 +57,16 @@ import "../styles/styles.css";
     padding: 10px;
     border: none;
     cursor: pointer;
+    background-color: #d95c3900;
+    font-size: 2rem;
   }
 
   .arrowprev {
-    left: 10px;
+    left: 15%;
   }
 
   .arrownext {
-    right: 10px;
+    right: 15%;
   }
 
   /* Boks med billede og tekst */
@@ -95,6 +98,7 @@ import "../styles/styles.css";
   .dotz {
     text-align: center;
     margin-top: 10px;
+    padding-bottom: 2rem;
   }
 
   .dot1 {
@@ -106,6 +110,36 @@ import "../styles/styles.css";
     border-radius: 50%;
     cursor: pointer;
   }
+
+  @media (max-width: 600px) {
+    article h2 {
+        font-size: 37px;
+    }
+
+    .arrowprev {
+    left: 0%;
+  }
+
+  .arrownext {
+    right: 0%;
+  }
+
+  .citat-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+  }
+
+  .citatbild img {
+    width: 30%;
+    max-width: 300px;
+    margin-inline: auto;
+  }
+  }
+
 </style>
 
 <script>
