@@ -6,9 +6,10 @@ import Form2 from "../components/Form2.astro";
 import Button from "../components/Button.astro"
 
 ---
-
+<form> 
 <section class="form_container">
     <h2>{title3}</h2>
+    
   <div class="grid_1-1">
 
     <div> 
@@ -17,7 +18,7 @@ import Button from "../components/Button.astro"
     </div>  
 
     <div> 
-<form>
+<div>
     <label for="dropdown"></label>
     <select id="dropdown" name="dropdown">
         <option value="option1">Jeg søger tilbuddet</option>
@@ -25,7 +26,7 @@ import Button from "../components/Button.astro"
         <option value="option3">Akutrådgivning</option>
         <option value="option4">Gruppeforløb</option>
     </select>
-</form>
+  </div>
 <Form2 title="Fornavn*"/>
 <Form2 title="Efternavn*"/>
 <Form2 title="Fødselsår*"/>
@@ -33,7 +34,7 @@ import Button from "../components/Button.astro"
 <Form2 title="By*"/>
 <Form2 title="Email*"/>
 <Form2 title="Mobil*"/>
-<form>
+<div>
     <label for="dropdown"></label>
     <select id="dropdown" name="dropdown">
         <option value="option1">Nuværende beskæftigelse*</option>
@@ -48,8 +49,8 @@ import Button from "../components/Button.astro"
         <option value="option4">Studerende</option>
         <option value="option4">Andet</option>
     </select>
-</form>
-<form>
+  </div>
+<div>
     <label for="dropdown"></label>
     <select id="dropdown" name="dropdown">
         <option value="option1">Uddannelsesmæssig baggrund*</option>
@@ -60,8 +61,8 @@ import Button from "../components/Button.astro"
         <option value="option4">Præst</option>
         <option value="option4">Andet</option>
     </select>
-</form>
-<form>
+  </div>
+<div>
     <label for="dropdown"></label>
     <select id="dropdown" name="dropdown">
         <option value="option1">Hvorfra har du hørt om Misbrugsportalen?*</option>
@@ -75,14 +76,16 @@ import Button from "../components/Button.astro"
         <option value="option4">Influencer</option>
         <option value="option4">Andet</option>
     </select>
-</form>
+  </div>
 
  </div> 
 
 
 </div>   
 <Button text="Send"></Button>
+
 </section>
+</form>
 
   
 <style>
